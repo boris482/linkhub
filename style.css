@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Скопійований код з минулого уроку */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-image: url('завантаження.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #1ed94a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Щоб сторінка не смикалася */
+}
+
+/* Стильний скляний блок для екранів гри (можеш додати цей клас до контейнерів в HTML, якщо захочеш) */
+#start-screen, #quiz-screen, #result-screen {
+  background: rgba(10, 15, 30, 0.75); /* Напівпрозорий темний фон */
+  border: 1px solid rgba(30, 217, 74, 0.2); /* Легка зелена рамка */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(30, 217, 74, 0.15); /* М'яке космічне світіння навколо карти */
+  text-align: center;
+}
+
+#answers-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Твої кнопки відповідей із новими ефектами */
+.answer-btn {
+  width: 48%;
+  padding: 12px 20px; /* Трохи збільшив відступ */
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #2a22dd;
+  color: #1ed94a;
+  font-weight: 900;
+  border: 2px solid transparent;
+  transition: all 0.3s ease; /* Плавна анімація при наведенні */
+  box-shadow: 0 4px 10px rgba(42, 34, 221, 0.3);
+}
+
+/* Ефект при наведенні мишки на кнопку */
+.answer-btn:hover:not(:disabled) {
+  background-color: #1ed94a;
+  color: #2a22dd;
+  transform: scale(1.03); /* Кнопка злегка збільшується */
+  box-shadow: 0 0 15px #1ed94a; /* Неонове світіння */
+}
+
+/* Якщо кнопка заблокована після відповіді */
+.answer-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.hide {
+  display: none;
+}
+
+/* Правильна відповідь — яскраво-зелений неон */
+.correct {
+  background-color: rgb(0, 180, 0);
+  color: white;
+  box-shadow: 0 0 20px rgb(0, 255, 0);
+  border-color: white;
+}
+
+/* Неправильна відповідь — космічний червоний неон */
+.wrong {
+  background-color: rgb(220, 0, 0);
+  color: white;
+  box-shadow: 0 0 20px rgb(255, 0, 0);
+  border-color: white;
+}
+
+/* Кнопки старту та рестарту */
+#start-btn,
+#restart-btn {
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #000000;
+  color: white;
+  border: 2px solid #1ed94a;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(30, 217, 74, 0.4);
+}
+
+#start-btn:hover,
+#restart-btn:hover {
+  background-color: #1ed94a;
+  color: black;
+  box-shadow: 0 0 20px #1ed94a;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Стилізація таймера */
+#timer {
+  font-size: 18px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: 1px solid #1ed94a;
+  box-shadow: 0 0 8px rgba(30, 217, 74, 0.3);
+}
+
+/* Стилізація головного тексту питання */
+#question-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff; /* Текст питання тепер білий, щоб краще читався */
+  margin-bottom: 25px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
